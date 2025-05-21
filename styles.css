@@ -1,0 +1,124 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #00bcd4, #87CEEB); /* Light blue gradient background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Weather Widget Container - Increased height and horizontal layout */
+#weather-widget {
+    width: 70%; /* Reduced widget width */
+    max-width: 900px; /* Max width for larger screens */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Light background */
+    border-radius: 12px; /* Small border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: space-between; /* Distribute space between elements */
+    align-items: flex-start; /* Align items at the top */
+    position: relative; /* Position context for absolute positioning of dropdown */
+    max-height: 700px; /* Increased height for widget */
+    flex-direction: column; /* Ensure the widget grows vertically */
+    padding-top: 40px; /* Extra padding to accommodate the header */
+}
+
+/* Title of the Widget */
+#widget-title {
+    font-family: 'Poppins', sans-serif; /* Better font from Google Fonts */
+    font-size: 32px; /* Larger font size */
+    color: #333;
+    text-align: center; /* Center the title */
+    text-transform: uppercase; /* Make the text all caps */
+    margin-bottom: 20px; /* Space between the title and the input */
+}
+
+/* Add Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* City Search Input - Adjusted for horizontal layout */
+#city-search {
+    width: 100%; /* Reduce input width for horizontal layout */
+    padding: 12px;
+    font-size: 18px;
+    margin-bottom: 0; /* Remove margin since we now have horizontal layout */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+/* Autocomplete List - Positioned under the input */
+#autocomplete-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background: #ffffff;
+    border-radius: 8px;
+    position: absolute; /* Absolutely positioned */
+    width: 100%; /* Match the width of the input */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+    display: none;
+    z-index: 50; /* Ensure it appears above other elements */
+    top: 100%; /* Position it directly below the input box */
+    left: 0; /* Align it to the left of the input */
+    margin-top: 1px; /* Add a small space between the input and dropdown */
+}
+
+/* Autocomplete Item */
+#autocomplete-list li {
+    padding: 12px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+#autocomplete-list li:hover {
+    background-color: #ddd; /* Light hover effect */
+}
+
+/* Weather Info Section - Horizontal format adjustments */
+#weather-info {
+    display: none;
+    margin-top: 20px;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 50%; /* Adjust weather info to fit horizontally */
+}
+
+/* Forecast Section - Flexbox or grid for horizontal layout */
+#forecast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Makes the forecast responsive */
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%; /* Full width of the widget */
+}
+
+/* Each Day's Forecast */
+#forecast .day {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#forecast .day:hover {
+    background-color: #f1f1f1; /* Light background on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
